@@ -211,7 +211,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Import libraries</span>
@@ -226,7 +226,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Read student data</span>
@@ -256,7 +256,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c">#temporary - to delete</span>
@@ -271,7 +271,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[33]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -310,7 +310,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># TODO: Compute desired values - replace each &#39;?&#39; with an appropriate expression/function call</span>
@@ -364,7 +364,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Extract feature (X) and target (y) columns</span>
@@ -438,7 +438,7 @@ Feature values:-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Preprocess feature columns</span>
@@ -496,7 +496,7 @@ Feature values:-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># First, decide how many training vs test samples you want</span>
@@ -551,7 +551,7 @@ Test set: 95 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">time</span>
@@ -634,9 +634,9 @@ Test set: 95 samples
 </ul>
 <p>Reasons for choosing decision tree for this student intervention problem are-</p>
 <ul>
-<li>As Decison Tree is available as a module in sklearn, it could be quickly used.</li>
 <li>Advantages of decision tree mentioned above satisfy our requirements. As our resources are limited, so we want efficient algorithm. Also our output data is categorical ('pass' or 'failed'). </li>
 <li>As node of decision tree splits the data based on value of particular attribute, it helps building intuition to intervene in a particular feature for better success rate.</li>
+<li>It would be easier to explain to management if we finally chose it.</li>
 </ul>
 
 </div>
@@ -644,7 +644,7 @@ Test set: 95 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
@@ -661,7 +661,7 @@ Test set: 95 samples
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[39]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -680,50 +680,50 @@ Test set: 95 samples
     <tr>
       <th>0</th>
       <td>50</td>
-      <td>0.003</td>
-      <td>0.001</td>
+      <td>0.016</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.730159</td>
+      <td>0.625000</td>
     </tr>
     <tr>
       <th>1</th>
       <td>100</td>
-      <td>0.002</td>
-      <td>0.001</td>
+      <td>0.000</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.704000</td>
+      <td>0.753846</td>
     </tr>
     <tr>
       <th>2</th>
       <td>150</td>
-      <td>0.035</td>
       <td>0.000</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.677686</td>
+      <td>0.757576</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
-      <td>0.028</td>
-      <td>0.000</td>
+      <td>0.015</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.666667</td>
+      <td>0.736000</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
-      <td>0.029</td>
-      <td>0.001</td>
+      <td>0.000</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.697674</td>
+      <td>0.714286</td>
     </tr>
     <tr>
       <th>5</th>
       <td>300</td>
-      <td>0.018</td>
-      <td>0.001</td>
+      <td>0.016</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.710744</td>
+      <td>0.718750</td>
     </tr>
   </tbody>
 </table>
@@ -757,7 +757,6 @@ Test set: 95 samples
 </ul>
 <p>We chose SVM to use for this student intervention problem as:</p>
 <ul>
-<li>SVM support is available in sklearn, so it is easier to use.</li>
 <li>our number of features are large, which is handled by SVM better.</li>
 <li>Our problems is classification, which is optimized and solved by SVM algorithm.</li>
 <li>We would have number of different parameters, kernels to finetune our model.</li>
@@ -768,7 +767,7 @@ Test set: 95 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
@@ -785,7 +784,7 @@ Test set: 95 samples
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[40]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -804,50 +803,50 @@ Test set: 95 samples
     <tr>
       <th>0</th>
       <td>50</td>
-      <td>0.272</td>
       <td>0.002</td>
-      <td>0.904110</td>
-      <td>0.810811</td>
+      <td>0.001</td>
+      <td>0.909091</td>
+      <td>0.802817</td>
     </tr>
     <tr>
       <th>1</th>
       <td>100</td>
-      <td>0.010</td>
       <td>0.003</td>
-      <td>0.913907</td>
-      <td>0.746479</td>
+      <td>0.002</td>
+      <td>0.911565</td>
+      <td>0.829932</td>
     </tr>
     <tr>
       <th>2</th>
       <td>150</td>
-      <td>0.032</td>
-      <td>0.003</td>
-      <td>0.891775</td>
-      <td>0.777778</td>
+      <td>0.005</td>
+      <td>0.002</td>
+      <td>0.886878</td>
+      <td>0.816327</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
-      <td>0.048</td>
-      <td>0.004</td>
-      <td>0.876190</td>
-      <td>0.778523</td>
+      <td>0.006</td>
+      <td>0.002</td>
+      <td>0.880795</td>
+      <td>0.818182</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
-      <td>0.025</td>
-      <td>0.004</td>
-      <td>0.865285</td>
-      <td>0.800000</td>
+      <td>0.010</td>
+      <td>0.002</td>
+      <td>0.875332</td>
+      <td>0.812903</td>
     </tr>
     <tr>
       <th>5</th>
       <td>300</td>
-      <td>0.020</td>
-      <td>0.006</td>
-      <td>0.869565</td>
-      <td>0.805556</td>
+      <td>0.004</td>
+      <td>0.000</td>
+      <td>0.867679</td>
+      <td>0.818182</td>
     </tr>
   </tbody>
 </table>
@@ -880,21 +879,17 @@ Test set: 95 samples
 </ul>
 <p>Disadvantages of Logistic regression are:</p>
 <ul>
-<li>suffers from overfitting.</li>
-<li>it is not robust to outliers</li>
+<li>Variables should not be correleated with one another.</li>
+<li>Large same sizes are required.</li>
 </ul>
-<p>We chose logistic regression as:-</p>
-<ul>
-<li>It is available in sklearn, so would be easier to use.</li>
-<li>This algorithm has high success for binary classification, which corresponds to our predicted data of pass/failure.</li>
-</ul>
+<p>We chose logistic regression as this algorithm has high success for binary classification, which corresponds to our predicted data of pass/failure.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
@@ -911,7 +906,7 @@ Test set: 95 samples
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[41]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -930,50 +925,50 @@ Test set: 95 samples
     <tr>
       <th>0</th>
       <td>50</td>
-      <td>0.235</td>
-      <td>0.111</td>
-      <td>1.000000</td>
-      <td>0.650000</td>
+      <td>0.000</td>
+      <td>0.015</td>
+      <td>0.937500</td>
+      <td>0.737705</td>
     </tr>
     <tr>
       <th>1</th>
       <td>100</td>
-      <td>0.062</td>
+      <td>0.018</td>
       <td>0.000</td>
-      <td>0.887324</td>
-      <td>0.692913</td>
+      <td>0.895105</td>
+      <td>0.772727</td>
     </tr>
     <tr>
       <th>2</th>
       <td>150</td>
+      <td>0.004</td>
       <td>0.000</td>
-      <td>0.000</td>
-      <td>0.850679</td>
-      <td>0.734375</td>
+      <td>0.855769</td>
+      <td>0.751880</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
-      <td>0.005</td>
+      <td>0.006</td>
       <td>0.000</td>
-      <td>0.861953</td>
-      <td>0.746269</td>
+      <td>0.838028</td>
+      <td>0.774648</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
-      <td>0.006</td>
       <td>0.000</td>
-      <td>0.864266</td>
-      <td>0.788321</td>
+      <td>0.000</td>
+      <td>0.833803</td>
+      <td>0.776978</td>
     </tr>
     <tr>
       <th>5</th>
       <td>300</td>
-      <td>0.008</td>
+      <td>0.015</td>
       <td>0.000</td>
-      <td>0.850000</td>
-      <td>0.748092</td>
+      <td>0.840647</td>
+      <td>0.788732</td>
     </tr>
   </tbody>
 </table>
@@ -1012,7 +1007,7 @@ Test set: 95 samples
 <li>SVM</li>
 <li>Logistic Regression</li>
 </ul>
-<p>We found that Decision Tree perfectly fits the data as its f1 score on training set is perfect 1.0, which seems to be overfit as checked by score on testing set. Decision Tree f1 score (&lt; 0.8) is nearly same as logistic regression, but less than SVM(&gt; .8). We found that training and testing time of Decision Tree algorithm is very low when compared to other algorithms like SVM, logistic regression. Although SVM has best generalized the model and has highest testing score, but its performance cost in terms of runtime is not as efficient as compared to decision tree. Logistic regression has number of inherent limitations. Taking account of all these factors, we have chosen Decision Tree model to make prediction. Though Decision Tree is overfitting in current model, but we could fine-tune it by limiting depth of tree to generalize the model.</p>
+<p>We found that Decision Tree perfectly fits the data as its f1 score on training set is perfect 1.0, which seems to be overfit as checked by score on testing set. Decision Tree f1 score (&lt; 0.8) is nearly same as logistic regression, but less than SVM(&gt; .8). We found that training and testing time of Decision Tree algorithm is very low when compared to other algorithms like SVM, logistic regression. Although SVM has best generalized the model and has highest testing score, but its performance cost in terms of runtime is not as efficient as compared to decision tree. When compared to logistic regression, logistic regression are faster and have similar score as that of decision tree. We have chosen decision tree as it would be easier to interpret and explain. Also number of features are high and there is correlation between them which would limit logistic regression. Taking account of all these factors, we have chosen Decision Tree model to make prediction. Though Decision Tree is overfitting in current model, but we could fine-tune it by limiting depth of tree to generalize the model.</p>
 
 </div>
 </div>
@@ -1022,14 +1017,18 @@ Test set: 95 samples
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Decision Tree models a series of choices/decisions to get final outcome. Here Consecutive decisions or series of choices taken are based on previous choices. At each choice(node), we are deciding on the basis of value of a feature what decisions or checks(nodes) would be taken later. Thus we are splitting our data in these nodes. There are some special leaf nodes after which no subsequent decisions are made and data is finally categorized in an output category. This model is called tree, because if we visualize our model it would look like tree as different choices are splitting the data just like branches of tree.</p>
+<p>Decision Tree models a series of choices/decisions to get final outcome. Here Consecutive decisions or series of choices taken are based on previous choices. At each choice(node), we are deciding on the basis of value of a feature what decisions or checks(nodes) would be taken later. Thus we are splitting our data in these nodes. There are some special leaf nodes after which no subsequent decisions are made and data is finally categorized in an output category. This model is called tree, because if we visualize our model it would look like tree as different choices are splitting the data just like branches of tree.<br>
+For creating a decision tree, nodes are made such that they best segregates the pass and failed data in training set, which in mathematical jargon is measured by entropy. For nodes which have been able to split the data perfectly become leaf nodes and need not be augmented by children nodes for further split of data.<br>
+Now for predicting data on test set, we starting from first node(root) of decision tree and as per range of its features and decision expression on node traverse to subsequent decision node made to best split data while training. This process is followed until we reach a leaf node where test data is categorized i.e. pass or failures as per this leaf node category designated while training.<br>
+We can understand concept of decision tree through this very simiplified example of whether to drive slow or fast as per bumpiness and steepness of road.
+<img src="DT.jpg"></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">grid_search</span>
@@ -1053,8 +1052,8 @@ Test set: 95 samples
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>F1 score for train set with fine tuned Decision Tree : 0.810933940774
-F1 score for test set with fine tuned Decision Tree: 0.811594202899
+<pre>F1 score for train set with fine tuned Decision Tree : 0.829473684211
+F1 score for test set with fine tuned Decision Tree: 0.802631578947
 </pre>
 </div>
 </div>
