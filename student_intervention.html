@@ -211,7 +211,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Import libraries</span>
@@ -226,7 +226,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Read student data</span>
@@ -256,7 +256,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c">#temporary - to delete</span>
@@ -271,7 +271,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[29]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -310,7 +310,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># TODO: Compute desired values - replace each &#39;?&#39; with an appropriate expression/function call</span>
@@ -364,7 +364,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Extract feature (X) and target (y) columns</span>
@@ -438,7 +438,7 @@ Feature values:-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Preprocess feature columns</span>
@@ -496,7 +496,7 @@ Feature values:-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># First, decide how many training vs test samples you want</span>
@@ -507,7 +507,13 @@ Feature values:-
 
 <span class="c"># TODO: Then, select features (X) and corresponding labels (y) for the training and test sets</span>
 <span class="c"># Note: Shuffle the data or randomly select samples to avoid any bias due to ordering in the dataset</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">X_all</span><span class="p">,</span> <span class="n">y_all</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="n">num_train</span><span class="p">)</span>
+<span class="c">#X_train, X_test, y_train, y_test = cross_validation.train_test_split(X_all, y_all, train_size=num_train)</span>
+<span class="n">sss</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">StratifiedShuffleSplit</span><span class="p">(</span><span class="n">y_all</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="n">num_train</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">train_index</span><span class="p">,</span> <span class="n">test_index</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">sss</span><span class="p">))</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">X_all</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_index</span><span class="p">]</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">y_all</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_index</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">X_all</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">y_all</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
 <span class="k">print</span> <span class="s">&quot;Training set: {} samples&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="k">print</span> <span class="s">&quot;Test set: {} samples&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
@@ -523,7 +529,7 @@ Feature values:-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training set: 300 samples
-Test set: 95 samples
+Test set: 40 samples
 </pre>
 </div>
 </div>
@@ -551,7 +557,7 @@ Test set: 95 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">time</span>
@@ -646,7 +652,7 @@ Test set: 95 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
@@ -663,7 +669,7 @@ Test set: 95 samples
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[35]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[33]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -683,49 +689,49 @@ Test set: 95 samples
       <th>0</th>
       <td>50</td>
       <td>0.000</td>
-      <td>0</td>
+      <td>0.000</td>
       <td>1</td>
-      <td>0.676692</td>
+      <td>0.583333</td>
     </tr>
     <tr>
       <th>1</th>
       <td>100</td>
-      <td>0.016</td>
-      <td>0</td>
+      <td>0.000</td>
+      <td>0.000</td>
       <td>1</td>
-      <td>0.740741</td>
+      <td>0.750000</td>
     </tr>
     <tr>
       <th>2</th>
       <td>150</td>
       <td>0.000</td>
-      <td>0</td>
+      <td>0.000</td>
       <td>1</td>
-      <td>0.788732</td>
+      <td>0.750000</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
+      <td>0.015</td>
       <td>0.000</td>
-      <td>0</td>
       <td>1</td>
-      <td>0.762590</td>
+      <td>0.745763</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
-      <td>0.016</td>
-      <td>0</td>
+      <td>0.000</td>
+      <td>0.001</td>
       <td>1</td>
-      <td>0.757143</td>
+      <td>0.678571</td>
     </tr>
     <tr>
       <th>5</th>
       <td>300</td>
       <td>0.000</td>
-      <td>0</td>
+      <td>0.000</td>
       <td>1</td>
-      <td>0.740741</td>
+      <td>0.779661</td>
     </tr>
   </tbody>
 </table>
@@ -744,7 +750,13 @@ Test set: 95 samples
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="SUPPORT-VECTOR-MACHINE">SUPPORT VECTOR MACHINE<a class="anchor-link" href="#SUPPORT-VECTOR-MACHINE">&#182;</a></h3><p>Support Vector Machine (SVM) model is a representation of the examples as points in space, mapped so that the examples of the separate categories are divided by a clear gap that is as wide as possible. New examples are then mapped into that sampe space and predicted to belong to category based on which side of the gap they fall on.</p>
-<p>Support vector machines are generally used on data on which boundaries between different categories is complex and not easy to model through linear models or decision Tree.</p>
+<p>Support vector machines are generally used on data on which boundaries between different categories is complex and not easy to model through linear models or decision Tree.<br>
+Some of general application mentioned in wikipedia article is:-</p>
+<ul>
+<li>recognition of hand-written characters</li>
+<li>classification of proteins</li>
+<li>classification of images</li>
+</ul>
 <p>Advantages are</p>
 <ul>
 <li>Effective in <b>high dimensional</b> spaces</li>
@@ -769,7 +781,7 @@ Test set: 95 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
@@ -786,7 +798,7 @@ Test set: 95 samples
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[36]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -805,50 +817,50 @@ Test set: 95 samples
     <tr>
       <th>0</th>
       <td>50</td>
-      <td>0.016</td>
       <td>0.000</td>
-      <td>0.878788</td>
-      <td>0.851613</td>
+      <td>0.000</td>
+      <td>0.833333</td>
+      <td>0.787879</td>
     </tr>
     <tr>
       <th>1</th>
       <td>100</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.876712</td>
-      <td>0.860759</td>
+      <td>0.015</td>
+      <td>0.001</td>
+      <td>0.837500</td>
+      <td>0.805970</td>
     </tr>
     <tr>
       <th>2</th>
       <td>150</td>
-      <td>0.015</td>
-      <td>0.000</td>
-      <td>0.847162</td>
-      <td>0.860759</td>
+      <td>0.005</td>
+      <td>0.001</td>
+      <td>0.852174</td>
+      <td>0.830769</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
-      <td>0.022</td>
-      <td>0.002</td>
-      <td>0.865772</td>
-      <td>0.862745</td>
+      <td>0.007</td>
+      <td>0.001</td>
+      <td>0.875000</td>
+      <td>0.800000</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
-      <td>0.005</td>
-      <td>0.016</td>
-      <td>0.858639</td>
-      <td>0.844156</td>
+      <td>0.008</td>
+      <td>0.000</td>
+      <td>0.857143</td>
+      <td>0.805970</td>
     </tr>
     <tr>
       <th>5</th>
       <td>300</td>
-      <td>0.015</td>
       <td>0.016</td>
-      <td>0.855895</td>
-      <td>0.855263</td>
+      <td>0.000</td>
+      <td>0.860215</td>
+      <td>0.830769</td>
     </tr>
   </tbody>
 </table>
@@ -892,7 +904,7 @@ Test set: 95 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
@@ -909,7 +921,7 @@ Test set: 95 samples
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[37]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[35]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -928,50 +940,50 @@ Test set: 95 samples
     <tr>
       <th>0</th>
       <td>50</td>
-      <td>0.016</td>
       <td>0.000</td>
-      <td>0.918033</td>
-      <td>0.713178</td>
+      <td>0.000</td>
+      <td>0.950820</td>
+      <td>0.716981</td>
     </tr>
     <tr>
       <th>1</th>
       <td>100</td>
       <td>0.000</td>
-      <td>0.016</td>
-      <td>0.874074</td>
-      <td>0.773723</td>
+      <td>0.000</td>
+      <td>0.887324</td>
+      <td>0.736842</td>
     </tr>
     <tr>
       <th>2</th>
       <td>150</td>
+      <td>0.016</td>
       <td>0.000</td>
-      <td>0.000</td>
-      <td>0.834123</td>
-      <td>0.814286</td>
+      <td>0.834951</td>
+      <td>0.766667</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
-      <td>0.018</td>
       <td>0.000</td>
-      <td>0.826087</td>
-      <td>0.802920</td>
+      <td>0.015</td>
+      <td>0.849315</td>
+      <td>0.754098</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
-      <td>0.006</td>
       <td>0.000</td>
-      <td>0.828169</td>
-      <td>0.788321</td>
+      <td>0.000</td>
+      <td>0.835580</td>
+      <td>0.793651</td>
     </tr>
     <tr>
       <th>5</th>
       <td>300</td>
-      <td>0.006</td>
+      <td>0.016</td>
       <td>0.000</td>
-      <td>0.841121</td>
-      <td>0.779412</td>
+      <td>0.844037</td>
+      <td>0.786885</td>
     </tr>
   </tbody>
 </table>
@@ -1021,7 +1033,7 @@ Test set: 95 samples
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Decision Tree models a series of choices/decisions to get final outcome. Here Consecutive decisions or series of choices taken are based on previous choices. At each choice(node), we are deciding on the basis of value of a feature what decisions or checks(nodes) would be taken later. Thus we are splitting our data in these nodes. There are some special leaf nodes after which no subsequent decisions are made and data is finally categorized in an output category. This model is called tree, because if we visualize our model it would look like tree as different choices are splitting the data just like branches of tree.<br>
-For creating a decision tree, nodes are made such that they best segregates the pass and failed data in training set, which in mathematical jargon is measured by entropy. For nodes which have been able to split the data perfectly become leaf nodes and need not be augmented by children nodes for further split of data.<br>
+For creating a decision tree, nodes are made such that they best segregates the pass and failed data in training set. For nodes which have been able to split the data perfectly become leaf nodes and need not be augmented by children nodes for further split of data.<br>
 Now for predicting data on test set, we starting from first node(root) of decision tree and as per range of its features and decision expression on node traverse to subsequent decision node made to best split data while training. This process is followed until we reach a leaf node where test data is categorized i.e. pass or failures as per this leaf node category designated while training.<br>
 We can understand concept of decision tree through this very simiplified example of whether to drive slow or fast as per bumpiness and steepness of road.
 <img src="DT.jpg"></p>
@@ -1031,7 +1043,7 @@ We can understand concept of decision tree through this very simiplified example
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">grid_search</span>
@@ -1055,8 +1067,8 @@ We can understand concept of decision tree through this very simiplified example
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>F1 score for train set with fine tuned Decision Tree : 0.804597701149
-F1 score for test set with fine tuned Decision Tree: 0.830985915493
+<pre>F1 score for train set with fine tuned Decision Tree : 0.813636363636
+F1 score for test set with fine tuned Decision Tree: 0.793103448276
 </pre>
 </div>
 </div>
