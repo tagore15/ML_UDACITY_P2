@@ -211,7 +211,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Import libraries</span>
@@ -226,7 +226,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Read student data</span>
@@ -256,7 +256,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c">#temporary - to delete</span>
@@ -271,7 +271,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[29]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -310,7 +310,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># TODO: Compute desired values - replace each &#39;?&#39; with an appropriate expression/function call</span>
@@ -364,7 +364,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Extract feature (X) and target (y) columns</span>
@@ -438,7 +438,7 @@ Feature values:-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Preprocess feature columns</span>
@@ -496,7 +496,7 @@ Feature values:-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># First, decide how many training vs test samples you want</span>
@@ -551,7 +551,7 @@ Test set: 95 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">time</span>
@@ -637,6 +637,8 @@ Test set: 95 samples
 <li>Advantages of decision tree mentioned above satisfy our requirements. As our resources are limited, so we want efficient algorithm. Also our output data is categorical ('pass' or 'failed'). </li>
 <li>As node of decision tree splits the data based on value of particular attribute, it helps building intuition to intervene in a particular feature for better success rate.</li>
 <li>It would be easier to explain to management if we finally chose it.</li>
+<li>We don't know which are relevant columns/feature in our data set. Decision Tree would easily handle it through information gain.</li>
+<li>Also Decision tree doesn't make any assumption about linearity of which we are not sure about given data set.</li>
 </ul>
 
 </div>
@@ -644,7 +646,7 @@ Test set: 95 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
@@ -661,7 +663,7 @@ Test set: 95 samples
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[35]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -680,18 +682,18 @@ Test set: 95 samples
     <tr>
       <th>0</th>
       <td>50</td>
-      <td>0.016</td>
+      <td>0.000</td>
       <td>0</td>
       <td>1</td>
-      <td>0.625000</td>
+      <td>0.676692</td>
     </tr>
     <tr>
       <th>1</th>
       <td>100</td>
-      <td>0.000</td>
+      <td>0.016</td>
       <td>0</td>
       <td>1</td>
-      <td>0.753846</td>
+      <td>0.740741</td>
     </tr>
     <tr>
       <th>2</th>
@@ -699,31 +701,31 @@ Test set: 95 samples
       <td>0.000</td>
       <td>0</td>
       <td>1</td>
-      <td>0.757576</td>
+      <td>0.788732</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
-      <td>0.015</td>
+      <td>0.000</td>
       <td>0</td>
       <td>1</td>
-      <td>0.736000</td>
+      <td>0.762590</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
-      <td>0.000</td>
+      <td>0.016</td>
       <td>0</td>
       <td>1</td>
-      <td>0.714286</td>
+      <td>0.757143</td>
     </tr>
     <tr>
       <th>5</th>
       <td>300</td>
-      <td>0.016</td>
+      <td>0.000</td>
       <td>0</td>
       <td>1</td>
-      <td>0.718750</td>
+      <td>0.740741</td>
     </tr>
   </tbody>
 </table>
@@ -767,7 +769,7 @@ Test set: 95 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
@@ -784,7 +786,7 @@ Test set: 95 samples
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[36]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -803,50 +805,50 @@ Test set: 95 samples
     <tr>
       <th>0</th>
       <td>50</td>
-      <td>0.002</td>
-      <td>0.001</td>
-      <td>0.909091</td>
-      <td>0.802817</td>
+      <td>0.016</td>
+      <td>0.000</td>
+      <td>0.878788</td>
+      <td>0.851613</td>
     </tr>
     <tr>
       <th>1</th>
       <td>100</td>
-      <td>0.003</td>
-      <td>0.002</td>
-      <td>0.911565</td>
-      <td>0.829932</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.876712</td>
+      <td>0.860759</td>
     </tr>
     <tr>
       <th>2</th>
       <td>150</td>
-      <td>0.005</td>
-      <td>0.002</td>
-      <td>0.886878</td>
-      <td>0.816327</td>
+      <td>0.015</td>
+      <td>0.000</td>
+      <td>0.847162</td>
+      <td>0.860759</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
-      <td>0.006</td>
+      <td>0.022</td>
       <td>0.002</td>
-      <td>0.880795</td>
-      <td>0.818182</td>
+      <td>0.865772</td>
+      <td>0.862745</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
-      <td>0.010</td>
-      <td>0.002</td>
-      <td>0.875332</td>
-      <td>0.812903</td>
+      <td>0.005</td>
+      <td>0.016</td>
+      <td>0.858639</td>
+      <td>0.844156</td>
     </tr>
     <tr>
       <th>5</th>
       <td>300</td>
-      <td>0.004</td>
-      <td>0.000</td>
-      <td>0.867679</td>
-      <td>0.818182</td>
+      <td>0.015</td>
+      <td>0.016</td>
+      <td>0.855895</td>
+      <td>0.855263</td>
     </tr>
   </tbody>
 </table>
@@ -864,7 +866,7 @@ Test set: 95 samples
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="LOGISTIC-REGRESSION">LOGISTIC REGRESSION<a class="anchor-link" href="#LOGISTIC-REGRESSION">&#182;</a></h3><p>Logistic regression is a linear model for classification rather than regression.</p>
+<h3 id="LOGISTIC-REGRESSION">LOGISTIC REGRESSION<a class="anchor-link" href="#LOGISTIC-REGRESSION">&#182;</a></h3><p>Logistic regression is a linear model for classification rather than regression. Here maximum likelihood is used to determine significance of the variables which will be part of the logistic regression equation.</p>
 <p>Logistic regression dominates social and biomedical sciences. Some of application of logistic regression would be:-</p>
 <ul>
 <li>predicting whether a patient has given disease based on observed characteristics.</li>
@@ -876,20 +878,21 @@ Test set: 95 samples
 <li>Parametric analytic tool</li>
 <li>Provides probability outcome</li>
 <li>Controls confounding</li>
+<li>avoids overfit</li>
 </ul>
 <p>Disadvantages of Logistic regression are:</p>
 <ul>
-<li>Variables should not be correleated with one another.</li>
-<li>Large same sizes are required.</li>
+<li>It assumes that there is a single linear decision bounday which can separate data.</li>
+<li>Large sample sizes are required.</li>
 </ul>
-<p>We chose logistic regression as this algorithm has high success for binary classification, which corresponds to our predicted data of pass/failure.</p>
+<p>We chose logistic regression as this algorithm has high success for binary classification, which corresponds to our predicted data of pass/failure. Logistic regression make a single boundary while separating data irrespective of number of features. So this might be a better generalization in logistic regression than other fast algorithms like decision tree, which would create complex model to fit number of features as in given data number of features(~30) are moderately high given small number of samples.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
@@ -906,7 +909,7 @@ Test set: 95 samples
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[37]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -925,50 +928,50 @@ Test set: 95 samples
     <tr>
       <th>0</th>
       <td>50</td>
+      <td>0.016</td>
       <td>0.000</td>
-      <td>0.015</td>
-      <td>0.937500</td>
-      <td>0.737705</td>
+      <td>0.918033</td>
+      <td>0.713178</td>
     </tr>
     <tr>
       <th>1</th>
       <td>100</td>
-      <td>0.018</td>
       <td>0.000</td>
-      <td>0.895105</td>
-      <td>0.772727</td>
+      <td>0.016</td>
+      <td>0.874074</td>
+      <td>0.773723</td>
     </tr>
     <tr>
       <th>2</th>
       <td>150</td>
-      <td>0.004</td>
       <td>0.000</td>
-      <td>0.855769</td>
-      <td>0.751880</td>
+      <td>0.000</td>
+      <td>0.834123</td>
+      <td>0.814286</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
-      <td>0.006</td>
+      <td>0.018</td>
       <td>0.000</td>
-      <td>0.838028</td>
-      <td>0.774648</td>
+      <td>0.826087</td>
+      <td>0.802920</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
+      <td>0.006</td>
       <td>0.000</td>
-      <td>0.000</td>
-      <td>0.833803</td>
-      <td>0.776978</td>
+      <td>0.828169</td>
+      <td>0.788321</td>
     </tr>
     <tr>
       <th>5</th>
       <td>300</td>
-      <td>0.015</td>
+      <td>0.006</td>
       <td>0.000</td>
-      <td>0.840647</td>
-      <td>0.788732</td>
+      <td>0.841121</td>
+      <td>0.779412</td>
     </tr>
   </tbody>
 </table>
@@ -1007,7 +1010,7 @@ Test set: 95 samples
 <li>SVM</li>
 <li>Logistic Regression</li>
 </ul>
-<p>We found that Decision Tree perfectly fits the data as its f1 score on training set is perfect 1.0, which seems to be overfit as checked by score on testing set. Decision Tree f1 score (&lt; 0.8) is nearly same as logistic regression, but less than SVM(&gt; .8). We found that training and testing time of Decision Tree algorithm is very low when compared to other algorithms like SVM, logistic regression. Although SVM has best generalized the model and has highest testing score, but its performance cost in terms of runtime is not as efficient as compared to decision tree. When compared to logistic regression, logistic regression are faster and have similar score as that of decision tree. We have chosen decision tree as it would be easier to interpret and explain. Also number of features are high and there is correlation between them which would limit logistic regression. Taking account of all these factors, we have chosen Decision Tree model to make prediction. Though Decision Tree is overfitting in current model, but we could fine-tune it by limiting depth of tree to generalize the model.</p>
+<p>Decision Tree f1 score (&lt; 0.8) is nearly same as logistic regression, but less than SVM(&gt; .8). We found that training and testing time of Decision Tree and logistic regression algorithm is low when compared to SVM. Although SVM has best generalized the model and has highest testing score, but its performance cost in terms of runtime is not as efficient as compared to decision tree/logistic regression. When we compared decision tree to logistic regression, logistic regression has similar performance or slightly better testing score as that of decision tree. We have chosen decision tree as its training score is high, even though testing scores are similar. This high training score gives us leeway to do pruning in model which would generalize the model and improve testing score. Decision tree would be easier to interpret and explain anyway.</p>
 
 </div>
 </div>
@@ -1028,7 +1031,7 @@ We can understand concept of decision tree through this very simiplified example
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">grid_search</span>
@@ -1052,8 +1055,8 @@ We can understand concept of decision tree through this very simiplified example
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>F1 score for train set with fine tuned Decision Tree : 0.829473684211
-F1 score for test set with fine tuned Decision Tree: 0.802631578947
+<pre>F1 score for train set with fine tuned Decision Tree : 0.804597701149
+F1 score for test set with fine tuned Decision Tree: 0.830985915493
 </pre>
 </div>
 </div>
