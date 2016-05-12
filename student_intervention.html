@@ -211,7 +211,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Import libraries</span>
@@ -226,7 +226,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Read student data</span>
@@ -256,7 +256,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c">#temporary - to delete</span>
@@ -271,7 +271,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[39]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -310,7 +310,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># TODO: Compute desired values - replace each &#39;?&#39; with an appropriate expression/function call</span>
@@ -364,7 +364,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Extract feature (X) and target (y) columns</span>
@@ -438,7 +438,7 @@ Feature values:-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Preprocess feature columns</span>
@@ -496,7 +496,7 @@ Feature values:-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># First, decide how many training vs test samples you want</span>
@@ -508,7 +508,7 @@ Feature values:-
 <span class="c"># TODO: Then, select features (X) and corresponding labels (y) for the training and test sets</span>
 <span class="c"># Note: Shuffle the data or randomly select samples to avoid any bias due to ordering in the dataset</span>
 <span class="c">#X_train, X_test, y_train, y_test = cross_validation.train_test_split(X_all, y_all, train_size=num_train)</span>
-<span class="n">sss</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">StratifiedShuffleSplit</span><span class="p">(</span><span class="n">y_all</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="n">num_train</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">sss</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">StratifiedShuffleSplit</span><span class="p">(</span><span class="n">y_all</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">num_test</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="n">num_train</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">train_index</span><span class="p">,</span> <span class="n">test_index</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">sss</span><span class="p">))</span>
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">X_all</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_index</span><span class="p">]</span>
 <span class="n">y_train</span> <span class="o">=</span> <span class="n">y_all</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_index</span><span class="p">]</span>
@@ -529,7 +529,7 @@ Feature values:-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training set: 300 samples
-Test set: 40 samples
+Test set: 95 samples
 </pre>
 </div>
 </div>
@@ -557,7 +557,7 @@ Test set: 40 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">time</span>
@@ -652,7 +652,7 @@ Test set: 40 samples
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
@@ -669,7 +669,7 @@ Test set: 40 samples
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[33]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[45]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -689,49 +689,49 @@ Test set: 40 samples
       <th>0</th>
       <td>50</td>
       <td>0.000</td>
-      <td>0.000</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.583333</td>
+      <td>0.704918</td>
     </tr>
     <tr>
       <th>1</th>
       <td>100</td>
       <td>0.000</td>
-      <td>0.000</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.750000</td>
+      <td>0.728682</td>
     </tr>
     <tr>
       <th>2</th>
       <td>150</td>
-      <td>0.000</td>
-      <td>0.000</td>
+      <td>0.015</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.750000</td>
+      <td>0.723077</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
-      <td>0.015</td>
       <td>0.000</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.745763</td>
+      <td>0.764706</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
       <td>0.000</td>
-      <td>0.001</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.678571</td>
+      <td>0.728682</td>
     </tr>
     <tr>
       <th>5</th>
       <td>300</td>
       <td>0.000</td>
-      <td>0.000</td>
+      <td>0</td>
       <td>1</td>
-      <td>0.779661</td>
+      <td>0.785185</td>
     </tr>
   </tbody>
 </table>
@@ -781,7 +781,7 @@ Some of general application mentioned in wikipedia article is:-</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
@@ -798,7 +798,7 @@ Some of general application mentioned in wikipedia article is:-</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[46]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -817,42 +817,42 @@ Some of general application mentioned in wikipedia article is:-</p>
     <tr>
       <th>0</th>
       <td>50</td>
-      <td>0.000</td>
-      <td>0.000</td>
+      <td>0.003</td>
+      <td>0.001</td>
       <td>0.833333</td>
-      <td>0.787879</td>
+      <td>0.802548</td>
     </tr>
     <tr>
       <th>1</th>
       <td>100</td>
-      <td>0.015</td>
+      <td>0.003</td>
       <td>0.001</td>
       <td>0.837500</td>
-      <td>0.805970</td>
+      <td>0.797468</td>
     </tr>
     <tr>
       <th>2</th>
       <td>150</td>
-      <td>0.005</td>
-      <td>0.001</td>
+      <td>0.004</td>
+      <td>0.000</td>
       <td>0.852174</td>
-      <td>0.830769</td>
+      <td>0.812903</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
-      <td>0.007</td>
-      <td>0.001</td>
+      <td>0.000</td>
+      <td>0.000</td>
       <td>0.875000</td>
-      <td>0.800000</td>
+      <td>0.789474</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
-      <td>0.008</td>
+      <td>0.015</td>
       <td>0.000</td>
       <td>0.857143</td>
-      <td>0.805970</td>
+      <td>0.805195</td>
     </tr>
     <tr>
       <th>5</th>
@@ -860,7 +860,7 @@ Some of general application mentioned in wikipedia article is:-</p>
       <td>0.016</td>
       <td>0.000</td>
       <td>0.860215</td>
-      <td>0.830769</td>
+      <td>0.821192</td>
     </tr>
   </tbody>
 </table>
@@ -904,7 +904,7 @@ Some of general application mentioned in wikipedia article is:-</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
@@ -921,7 +921,7 @@ Some of general application mentioned in wikipedia article is:-</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[35]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[47]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -940,10 +940,10 @@ Some of general application mentioned in wikipedia article is:-</p>
     <tr>
       <th>0</th>
       <td>50</td>
-      <td>0.000</td>
+      <td>0.015</td>
       <td>0.000</td>
       <td>0.950820</td>
-      <td>0.716981</td>
+      <td>0.694215</td>
     </tr>
     <tr>
       <th>1</th>
@@ -951,39 +951,39 @@ Some of general application mentioned in wikipedia article is:-</p>
       <td>0.000</td>
       <td>0.000</td>
       <td>0.887324</td>
-      <td>0.736842</td>
+      <td>0.751880</td>
     </tr>
     <tr>
       <th>2</th>
       <td>150</td>
-      <td>0.016</td>
       <td>0.000</td>
+      <td>0.018</td>
       <td>0.834951</td>
-      <td>0.766667</td>
+      <td>0.750000</td>
     </tr>
     <tr>
       <th>3</th>
       <td>200</td>
+      <td>0.005</td>
       <td>0.000</td>
-      <td>0.015</td>
       <td>0.849315</td>
-      <td>0.754098</td>
+      <td>0.755556</td>
     </tr>
     <tr>
       <th>4</th>
       <td>250</td>
-      <td>0.000</td>
-      <td>0.000</td>
+      <td>0.006</td>
+      <td>0.001</td>
       <td>0.835580</td>
-      <td>0.793651</td>
+      <td>0.791667</td>
     </tr>
     <tr>
       <th>5</th>
       <td>300</td>
-      <td>0.016</td>
+      <td>0.007</td>
       <td>0.000</td>
       <td>0.844037</td>
-      <td>0.786885</td>
+      <td>0.782609</td>
     </tr>
   </tbody>
 </table>
@@ -1043,7 +1043,7 @@ We can understand concept of decision tree through this very simiplified example
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">grid_search</span>
@@ -1068,7 +1068,7 @@ We can understand concept of decision tree through this very simiplified example
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>F1 score for train set with fine tuned Decision Tree : 0.813636363636
-F1 score for test set with fine tuned Decision Tree: 0.793103448276
+F1 score for test set with fine tuned Decision Tree: 0.802919708029
 </pre>
 </div>
 </div>
